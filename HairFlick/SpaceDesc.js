@@ -28,21 +28,21 @@ function Info(props) {
           <Button
             title='Orchard'
             titleStyle={{ fontSize: 12 }}
-            buttonStyle={{ backgroundColor: '#FD4018' }}
+            buttonStyle={{ backgroundColor: '#FF4D4D' }}
           ></Button>
         </View>
         <View style={styles.button1}>
           <Button
             title='Central'
             titleStyle={{ fontSize: 12 }}
-            buttonStyle={{ backgroundColor: '#FD4018' }}
+            buttonStyle={{ backgroundColor: '#FF4D4D' }}
           ></Button>
         </View>
         <View style={styles.button1}>
           <Button
             title='$120/day'
             titleStyle={{ fontSize: 12 }}
-            buttonStyle={{ backgroundColor: '#FD4018' }}
+            buttonStyle={{ backgroundColor: '#FF4D4D' }}
           ></Button>
         </View>
       </View>
@@ -77,7 +77,8 @@ function Info(props) {
         </TouchableOpacity>
       </View>
       <ScrollView
-        style={{ marginTop: 50 }}
+        showsHorizontalScrollIndicator={false}
+        style={{ marginTop: 50, paddingLeft:10 }}
         horizontal={true}>
         <Image
           style={styles.image4}
@@ -100,6 +101,7 @@ function Info(props) {
           source={require('./Images/interior1.jpg')}
         ></Image>
       </ScrollView>
+      <View style={{paddingTop:80}}></View>
     </ScrollView>
   );
 }
@@ -182,7 +184,7 @@ const App = () => {
             containerStyle={{ borderRadius: 10 }}
             title='Book Now'
             titleStyle={{ fontSize: 28, paddingHorizontal: 55, paddingVertical: 5, color: '#000000' }}
-            buttonStyle={{ backgroundColor: '#FD4018' }}
+            buttonStyle={{ backgroundColor: '#FF4D4D' }}
           ></Button>
         </View>
         <View style={styles.buttonContainer2}>
@@ -197,7 +199,7 @@ const App = () => {
               />
             }
             containerStyle={{ borderRadius: 10 }}
-            buttonStyle={{ backgroundColor: '#FD4018' }}
+            buttonStyle={{ backgroundColor: '#FF4D4D' }}
           ></Button>
         </View>
         <View>
@@ -294,14 +296,14 @@ const styles = StyleSheet.create({
   },
   buttonContainer1: {
     position: 'absolute',
-    height: '175%',
+    height: '173%',
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 25.
   },
   buttonContainer2: {
     position: 'absolute',
-    height: '175%',
+    height: '173%',
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 300.

@@ -19,16 +19,21 @@ import {
 } from 'react-native';
 
 import { Button, Tab, Icon, SearchBar } from 'react-native-elements'
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-function Info(props) {
+function Info(props, {navigation}) {
 
-    const [search, updateSearch] = useState("null")
+    const [search, updateSearch] = useState("")
 
     return (
         <View>
             <View style={{ paddingHorizontal: 20, paddingTop: 25 }}>
                 <TextInput
                     value={search}
+                    onChangeText={function (text) {
+                        updateSearch()
+                    }}
                     style={{ backgroundColor: '#EBEBEB', borderRadius: 10, height: 60, width: 280 }}
                 ></TextInput>
             </View>
