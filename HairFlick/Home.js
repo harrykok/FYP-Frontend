@@ -184,7 +184,7 @@ function Info(props, {navigation}) {
 const App = () => {
     return (
         <>
-            <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
+            <StatusBar barStyle="dark-content" backgroundColor="#5E75C3" />
             <View style={{position:'absolute', width:'100%', marginLeft:300, marginTop:24}}>
                 <Button
                     icon={
@@ -197,7 +197,7 @@ const App = () => {
                         />
                     }
                     containerStyle={{ borderRadius: 10, width: '18%', height:'98%' }}
-                    buttonStyle={{ backgroundColor: '#3433C1' }}
+                    buttonStyle={{ backgroundColor: '#5E75C3' }}
                 ></Button>
             </View>
             <Info></Info>
@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
     buttonContainer1: {
         borderRadius: 10,
         marginRight: 20,
-        backgroundColor: '#FF4D4D'
+        backgroundColor: '#F16774'
     },
 });
 

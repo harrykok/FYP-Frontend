@@ -27,22 +27,22 @@ function Info(props) {
         <View style={styles.button1}>
           <Button
             title='Orchard'
-            titleStyle={{ fontSize: 12 }}
-            buttonStyle={{ backgroundColor: '#FF4D4D' }}
+            titleStyle={{ fontSize: 12, color:'black' }}
+            buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
         <View style={styles.button1}>
           <Button
             title='Central'
-            titleStyle={{ fontSize: 12 }}
-            buttonStyle={{ backgroundColor: '#FF4D4D' }}
+            titleStyle={{ fontSize: 12, color:'black' }}
+            buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
         <View style={styles.button1}>
           <Button
             title='$120/day'
-            titleStyle={{ fontSize: 12 }}
-            buttonStyle={{ backgroundColor: '#FF4D4D' }}
+            titleStyle={{ fontSize: 12, color:'black' }}
+            buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
       </View>
@@ -146,7 +146,7 @@ function TopBar(props) {
           type='custom'
           imageSize={20}
           ratingBackgroundColor='#ca8afa'
-          tintColor='#ca8afa'
+          tintColor='#5E75C3'
           readonly
           fractions={1}
           startingValue={ratingNumber}
@@ -165,7 +165,7 @@ function TopBar(props) {
 const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" backgroundColor="#F58427" />
+      <StatusBar barStyle="dark-content" backgroundColor="#5E75C3" />
       <View style={styles.container}>
         <View style={styles.topContainer}>
           <TopBar></TopBar>
@@ -184,7 +184,7 @@ const App = () => {
             containerStyle={{ borderRadius: 10 }}
             title='Book Now'
             titleStyle={{ fontSize: 28, paddingHorizontal: 55, paddingVertical: 5, color: '#000000' }}
-            buttonStyle={{ backgroundColor: '#FF4D4D' }}
+            buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
         <View style={styles.buttonContainer2}>
@@ -199,7 +199,7 @@ const App = () => {
               />
             }
             containerStyle={{ borderRadius: 10 }}
-            buttonStyle={{ backgroundColor: '#FF4D4D' }}
+            buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
         <View>
@@ -280,11 +280,11 @@ const styles = StyleSheet.create({
   },
   topContainer: {
     flex: 0.4,
-    backgroundColor: '#ca8afa',
+    backgroundColor: '#5E75C3',
   },
   bottomContainer: {
     flex: 1,
-    backgroundColor: '#F8F8F8'
+    backgroundColor: '#F3F0F4'
 
   },
   imageContainer: {
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
     fontSize: 25
   },
   text2: {
-
+    fontFamily:'Munito'
   },
   text3: {
     fontSize: 20
