@@ -27,21 +27,21 @@ function Info(props) {
         <View style={styles.button1}>
           <Button
             title='Orchard'
-            titleStyle={{ fontSize: 12, color:'black' }}
+            titleStyle={{ fontSize: 12, color:'black', fontFamily:'Nunito-Regular' }}
             buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
         <View style={styles.button1}>
           <Button
             title='Central'
-            titleStyle={{ fontSize: 12, color:'black' }}
+            titleStyle={{ fontSize: 12, color:'black', fontFamily:'Nunito-Regular' }}
             buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
         <View style={styles.button1}>
           <Button
             title='$120/day'
-            titleStyle={{ fontSize: 12, color:'black' }}
+            titleStyle={{ fontSize: 12, color:'black', fontFamily:'Nunito-Regular' }}
             buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
@@ -51,7 +51,7 @@ function Info(props) {
         <Text style={styles.text3}>
           Description
         </Text>
-        <Text>
+        <Text style ={{fontFamily:'Nunito-Regular'}}>
           A newly opened salon located in the heart of Orchard road, decked out with the latest and newest equipment any hair stylist could ask for
         </Text>
       </View>
@@ -59,7 +59,7 @@ function Info(props) {
         <Text style={styles.text3}>
           Operating Hours
         </Text>
-        <Text>
+        <Text style ={{fontFamily:'Nunito-Regular'}}>
           11.00 AM - 10.00 PM daily
         </Text>
       </View>
@@ -123,7 +123,7 @@ function TopBar(props) {
         <TouchableOpacity>
           <Image
             style={styles.image2}
-            source={require('./Images/heart1.png')}
+            source={require('./Images/fav_white.png')}
           ></Image>
         </TouchableOpacity>
       </View>
@@ -165,7 +165,7 @@ function TopBar(props) {
 const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" backgroundColor="#5E75C3" />
+      <StatusBar barStyle="dark-content" backgroundColor="#454E6F" />
       <View style={styles.container}>
         <View style={styles.topContainer}>
           <TopBar></TopBar>
@@ -183,7 +183,7 @@ const App = () => {
           <Button
             containerStyle={{ borderRadius: 10 }}
             title='Book Now'
-            titleStyle={{ fontSize: 28, paddingHorizontal: 55, paddingVertical: 5, color: '#000000' }}
+            titleStyle={{ fontSize: 28, paddingHorizontal: 55, paddingVertical: 5, color: '#000000', fontFamily:'Nunito-Bold' }}
             buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
@@ -213,7 +213,7 @@ const App = () => {
                 />
               }
               variant="primary"
-              titleStyle={{ fontSize: 6 }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
               title="Location" />
             <Tab.Item
               icon={
@@ -223,7 +223,7 @@ const App = () => {
                   size={30}
                 />
               }
-              titleStyle={{ fontSize: 6 }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
               title="Schedule" />
             <Tab.Item
               icon={
@@ -233,7 +233,7 @@ const App = () => {
                   size={30}
                 />
               }
-              titleStyle={{ fontSize: 6 }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
               title="Home" />
             <Tab.Item
             icon={
@@ -243,7 +243,7 @@ const App = () => {
               size={30}
               />
             }
-              titleStyle={{ fontSize: 6 }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
               title="Liked" />
             <Tab.Item
             icon={
@@ -253,7 +253,7 @@ const App = () => {
               size={30}
               />
             }
-              titleStyle={{ fontSize: 6 }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
               title="Profile" />
           </Tab>
         </View>
@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
   },
   topContainer: {
     flex: 0.4,
-    backgroundColor: '#5E75C3',
+    backgroundColor: '#454E6F',
   },
   bottomContainer: {
     flex: 1,
@@ -299,6 +299,7 @@ const styles = StyleSheet.create({
     height: '173%',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom:30,
     marginLeft: 25.
   },
   buttonContainer2: {
@@ -306,13 +307,14 @@ const styles = StyleSheet.create({
     height: '173%',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom:30,
     marginLeft: 300.
   },
   image1: {
     marginTop: 25,
     marginLeft: 20,
     width: 40,
-    height: 40
+    height: 40,
   },
   image2: {
     marginTop: 25,
@@ -335,13 +337,17 @@ const styles = StyleSheet.create({
     marginLeft: 25,
   },
   text1: {
-    fontSize: 25
+    fontSize: 25,
+    color:'white',
+    fontFamily:'Nunito-Bold'
   },
   text2: {
-    fontFamily:'Munito'
+    fontFamily:'Nunito-Regular',
+    color:'white'
   },
   text3: {
-    fontSize: 20
+    fontSize: 20,
+    fontFamily:'Nunito-SemiBold'
   },
   rating: {
     marginRight: 245,
