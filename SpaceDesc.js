@@ -146,7 +146,7 @@ function TopBar(props) {
           type='custom'
           imageSize={20}
           ratingBackgroundColor='#ca8afa'
-          tintColor='#5E75C3'
+          tintColor='#454E6F'
           readonly
           fractions={1}
           startingValue={ratingNumber}
