@@ -5,80 +5,113 @@
  * @format
  * @flow strict-local
  */
-
-import React, {useState} from 'react';
+import * as React from 'react';
+//import React, {useState} from 'react';
 import {
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  View, 
+  View,
   Image,
   TouchableOpacity,
   TextInput,
-} from 'react-native'; 
+  Dimensions,
+  useWindowDimensions,
+} from 'react-native';
 
 import {Button, Tab, Icon, Rating} from 'react-native-elements';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-//import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
+
 const ratingNumber = 4.5;
-//test
+var height = Dimensions.get('window').height; //full height
 
-//tab navigation for buttons
-// function FeedScreen() {
-//   return (
-//     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-//       <Text>Feed!</Text>
-//     </View>
-//   );
-// }
+const FirstRoute = () => (
+  <View style={[styles.scene, {backgroundColor: 'white', height: height}]}>
+    <ScrollView style={{}}>
+      <View
+        style={{
+          borderColor: 'black',
+          borderWidth: 1,
+          height: 90,
+        }}>
+        <Text style={styles.name}>HairFlick Salon</Text>
+        <Text
+          style={
+            styles.location
+          }>{`2 Orchard Turn, ION Orchard, 238801, \n#03-25`}</Text>
+        <Text style={styles.date}>3 May 2021</Text>
+      </View>
+    </ScrollView>
+  </View>
+);
 
-// function NotificationsScreen() {
-//   return (
-//     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-//       <Text>Notifications!</Text>
-//     </View>
-//   );
-// }
+const SecondRoute = () => (
+  <View style={[styles.scene, {backgroundColor: 'white', height: height}]}>
+    <ScrollView style={{}}>
+      <View
+        style={{
+          borderColor: 'black',
+          borderWidth: 1,
+          // height: 120,
+        }}>
+        <Text style={styles.name}>HairFlick Salon</Text>
+        <Text
+          style={
+            styles.location
+          }>{`2 Orchard Turn, ION Orchard, 238801, \n#03-25`}</Text>
+        <Text style={styles.date}>3 May 2021</Text>
+        <View
+          style={{
+            margin: 10,
+            length: 20,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            borderBottomLeftRadius: 20,
+            borderBottomRightRadius: 20,
+          }}>
+          <Button title="Leave Review" color="#5E75C3" onPress={() => {}} />
+        </View>
+      </View>
+    </ScrollView>
+  </View>
+);
 
-// function ProfileScreen() {
-//   return (
-//     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-//       <Text>Profile!</Text>
-//     </View>
-//   );
-// }
+const initialLayout = {width: Dimensions.get('window').width};
 
-// const topTab = createMaterialTopTabNavigator();
+const renderScene = SceneMap({
+  activeBookings: FirstRoute,
+  history: SecondRoute,
+});
 
-// function MyTabs() {
-//   return (
-//     <topTab.Navigator
-//       initialRouteName="Feed"
-//       tabBarOptions={{
-//         activeTintColor: '#e91e63',
-//         labelStyle: {fontSize: 12},
-//         style: {backgroundColor: 'powderblue'},
-//       }}>
-//       <topTab.Screen
-//         name="Feed"
-//         component={FeedScreen}
-//         options={{tabBarLabel: 'Home'}}
-//       />
-//       <topTab.Screen
-//         name="Notifications"
-//         component={NotificationsScreen}
-//         options={{tabBarLabel: 'Updates'}}
-//       />
-//       <topTab.Screen
-//         name="Profile"
-//         component={ProfileScreen}
-//         options={{tabBarLabel: 'Profile'}}
-//       />
-//     </topTab.Navigator>
-//   );
-// }
+function TabViewExample() {
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    {key: 'activeBookings', title: 'Active Bookings'},
+    {key: 'history', title: 'History'},
+  ]);
+
+  const renderTabBar = props => (
+    <TabBar
+      {...props}
+      indicatorStyle={{backgroundColor: 'black'}}
+      style={{backgroundColor: '#F16774'}}
+    />
+  );
+
+  return (
+    <TabView
+      renderTabBar={renderTabBar}
+      navigationState={{index, routes}}
+      renderScene={renderScene}
+      onIndexChange={setIndex}
+      initialLayout={initialLayout}
+      style={styles.container1}
+    />
+  );
+}
 
 const App = () => {
   return (
@@ -132,39 +165,65 @@ const App = () => {
             dapibus tempor. Nullam viverra, risus a eleifend.
           </Text>
         </View>
-        {/* <NavigationContainer>
-          <MyTabs />
-        </NavigationContainer> */}
       </View>
-
+      <NavigationContainer>
+        <TabViewExample></TabViewExample>
+      </NavigationContainer>
       {/* This fixes the navbar to the bottom */}
-      <View style={{flex: 1}}>
-        <View style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
+      <View style={{flex: 0.5}}>
+        <View
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: '#5E75C3',
+          }}>
           <Tab>
             <Tab.Item
               icon={<Icon name="map-marker" type="font-awesome" size={30} />}
               variant="primary"
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{
+                fontSize: 6,
+                fontFamily: 'Nunito-Regular',
+                color: 'white',
+              }}
               title="Location"
             />
             <Tab.Item
               icon={<Icon name="calendar" type="font-awesome" size={30} />}
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{
+                fontSize: 6,
+                fontFamily: 'Nunito-Regular',
+                color: 'white',
+              }}
               title="Schedule"
             />
             <Tab.Item
               icon={<Icon name="home" type="font-awesome" size={30} />}
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{
+                fontSize: 6,
+                fontFamily: 'Nunito-Regular',
+                color: 'white',
+              }}
               title="Home"
             />
             <Tab.Item
               icon={<Icon name="heart" type="font-awesome" size={30} />}
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{
+                fontSize: 6,
+                fontFamily: 'Nunito-Regular',
+                color: 'white',
+              }}
               title="Liked"
             />
             <Tab.Item
               icon={<Icon name="user" type="font-awesome" size={30} />}
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{
+                fontSize: 6,
+                fontFamily: 'Nunito-Regular',
+                color: 'white',
+              }}
               title="Profile"
             />
           </Tab>
@@ -257,7 +316,7 @@ const styles = StyleSheet.create({
   },
   about: {
     position: 'relative',
-    paddingTop: 40,
+    paddingTop: 35,
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
     color: '#5E75C3',
@@ -268,7 +327,42 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: 'Nunito-Regular',
     color: 'black',
+    marginBottom: 10,
   },
+  container1: {
+    position: 'relative',
+    top: '45%',
+    backgroundColor: '#F16774',
+  },
+  scene: {
+    flexGrow: 1,
+  },
+  name: {
+    position: 'relative',
+    paddingTop: 10,
+    paddingLeft: 10,
+    fontSize: 16,
+    fontFamily: 'Nunito-Regular',
+  },
+  location: {
+    position: 'relative',
+    paddingTop: 10,
+    paddingLeft: 10,
+    fontSize: 12,
+    fontFamily: 'Nunito-Regular',
+    color: '#817A7A',
+  },
+  date: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    paddingTop: 10,
+    paddingRight: 10,
+    fontSize: 14,
+    fontFamily: 'Nunito-Regular',
+    color: '#817A7A',
+  },
+  
 });
 
 export default App;

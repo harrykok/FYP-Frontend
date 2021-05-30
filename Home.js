@@ -187,32 +187,32 @@ const App = () => {
       </View>
       <Info></Info>
       <View>
-        <View style={{marginTop: 80}}>
+        <View style={{marginTop: 80, backgroundColor:'#5E75C3'}}>
           <Tab>
             <Tab.Item
               icon={<Icon name="map-marker" type="font-awesome" size={30} />}
               variant="primary"
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular', color:'white'}}
               title="Location"
             />
             <Tab.Item
               icon={<Icon name="calendar" type="font-awesome" size={30} />}
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular', color:'white'}}
               title="Schedule"
             />
             <Tab.Item
               icon={<Icon name="home" type="font-awesome" size={30} />}
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular', color:'white'}}
               title="Home"
             />
             <Tab.Item
               icon={<Icon name="heart" type="font-awesome" size={30} />}
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular', color:'white'}}
               title="Liked"
             />
             <Tab.Item
               icon={<Icon name="user" type="font-awesome" size={30} />}
-              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular'}}
+              titleStyle={{fontSize: 6, fontFamily: 'Nunito-Regular', color:'white'}}
               title="Profile"
             />
           </Tab>

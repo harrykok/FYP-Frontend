@@ -202,7 +202,7 @@ const App = () => {
             buttonStyle={{ backgroundColor: '#F16774' }}
           ></Button>
         </View>
-        <View>
+        <View style={{backgroundColor:'#5E75C3'}}>
           <Tab>
             <Tab.Item
               icon={
@@ -213,7 +213,7 @@ const App = () => {
                 />
               }
               variant="primary"
-              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular', color:'white' }}
               title="Location" />
             <Tab.Item
               icon={
@@ -223,7 +223,7 @@ const App = () => {
                   size={30}
                 />
               }
-              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular', color:'white' }}
               title="Schedule" />
             <Tab.Item
               icon={
@@ -233,7 +233,7 @@ const App = () => {
                   size={30}
                 />
               }
-              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular', color:'white' }}
               title="Home" />
             <Tab.Item
             icon={
@@ -243,7 +243,7 @@ const App = () => {
               size={30}
               />
             }
-              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular', color:'white' }}
               title="Liked" />
             <Tab.Item
             icon={
@@ -253,7 +253,7 @@ const App = () => {
               size={30}
               />
             }
-              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular' }}
+              titleStyle={{ fontSize: 6, fontFamily:'Nunito-Regular', color:'white' }}
               title="Profile" />
           </Tab>
         </View>
